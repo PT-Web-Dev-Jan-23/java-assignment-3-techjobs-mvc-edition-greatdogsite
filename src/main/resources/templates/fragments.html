@@ -19,7 +19,7 @@
                 <a th:href="@{/}" class="navbar-brand">TechJobs</a>
             </div>
             <div class="navbar-collapse collapse">
-                <!--done TODO-- super bonus, added TechJobsController.java and used @ModelAttribute -->
+                <!--done TODO super bonus, added TechJobsController.java and used @ModelAttribute -->
                 <ul class="nav navbar-nav">
                     <li th:each="action : ${actions}"><a th:href="@{'/' + ${action.key}}" th:text="${action.value}"></a></li>
                 </ul>
