@@ -38,19 +38,19 @@
         </tr>
         <tr>
             <td>Employer</td>
-            <td><a th:href="@{/search/results?searchType=employer&(searchTerm=${job.getEmployer()})}" th:text="${#strings.capitalizeWords(job.getEmployer())}"></a></td>
+            <td><a th:href="@{/search/results?searchType=employer&(searchTerm=${job.employer})}" th:text="${#strings.capitalizeWords(job.employer)}"></a></td>
         </tr>
         <tr>
             <td>Location</td>
-            <td><a th:href="@{/search/results?searchType=location&(searchTerm=${job.getLocation()})}" th:text="${#strings.capitalizeWords(job.getLocation())}"></a></td>
+            <td><a th:href="@{/search/results?searchType=location&(searchTerm=${job.location})}" th:text="${#strings.capitalizeWords(job.location)}"></a></td>
         </tr>
         <tr>
             <td>Position Type</td>
-            <td><a th:href="@{/search/results?searchType=positionType&(searchTerm=${job.getPositionType()})}" th:text="${#strings.capitalizeWords(job.getPositionType())}"></a></td>
+            <td><a th:href="@{/search/results?searchType=positionType&(searchTerm=${job.positionType})}" th:text="${#strings.capitalizeWords(job.positionType)}"></a></td>
         </tr>
         <tr>
             <td>Skill</td>
-            <td><a th:href="@{/search/results?searchType=Skill&(searchTerm=${job.getCoreCompetency()})}" th:text="${#strings.capitalizeWords(job.getCoreCompetency())}"></a></td>
+            <td><a th:href="@{/search/results?searchType=coreCompetency&(searchTerm=${job.coreCompetency})}" th:text="${#strings.capitalizeWords(job.coreCompetency)}"></a></td>
         </tr>
     </table>
 
