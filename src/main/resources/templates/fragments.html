@@ -19,13 +19,40 @@
                 <a th:href="@{/}" class="navbar-brand">TechJobs</a>
             </div>
             <div class="navbar-collapse collapse">
+                <!--done TODO super bonus, added TechJobsController.java and used @ModelAttribute -->
                 <ul class="nav navbar-nav">
-                    <li><a th:href="@{/search}">Search</a></li>
-                    <li><a th:href="@{/list}">List</a></li>
+                    <li th:each="action : ${actions}"><a th:href="@{'/' + ${action.key}}" th:text="${action.value}"></a></li>
                 </ul>
             </div>
         </div>
     </div>
+
+    <table th:fragment="table" th:each="job : ${jobs}" class="job-listing">
+        <tr>
+            <td>ID</td>
+            <td th:text="${#strings.capitalizeWords(job.id)}"></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td th:text="${#strings.capitalizeWords(job.name)}"></td>
+        </tr>
+        <tr>
+            <td>Employer</td>
+            <td><a th:href="@{/search/results?searchType=employer&(searchTerm=${job.employer})}" th:text="${#strings.capitalizeWords(job.employer)}"></a></td>
+        </tr>
+        <tr>
+            <td>Location</td>
+            <td><a th:href="@{/search/results?searchType=location&(searchTerm=${job.location})}" th:text="${#strings.capitalizeWords(job.location)}"></a></td>
+        </tr>
+        <tr>
+            <td>Position Type</td>
+            <td><a th:href="@{/search/results?searchType=positionType&(searchTerm=${job.positionType})}" th:text="${#strings.capitalizeWords(job.positionType)}"></a></td>
+        </tr>
+        <tr>
+            <td>Skill</td>
+            <td><a th:href="@{/search/results?searchType=coreCompetency&(searchTerm=${job.coreCompetency})}" th:text="${#strings.capitalizeWords(job.coreCompetency)}"></a></td>
+        </tr>
+    </table>
 
 </body>
 </html>
